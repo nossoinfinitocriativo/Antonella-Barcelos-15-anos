@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Copiar Código Pix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #FFFF00; /* Cor de fundo amarela */
+            color: #0000FF; /* Texto azul */
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #FFFFFF; /* Cor de fundo do campo de texto */
+            color: #000000; /* Cor do texto no campo de texto */
+            border: 2px solid #0000FF; /* Borda azul */
+            border-radius: 10px; /* Borda arredondada */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0000FF; /* Cor de fundo do botão azul */
+            color: #FFFFFF; /* Texto do botão branco */
+            border: none;
+            border-radius: 10px; /* Borda arredondada */
+        }
+        button:hover {
+            background-color: #0000AA; /* Cor de fundo do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <h1>Copiar Código Pix</h1>
+    <p>Clique no botão abaixo para copiar o código Pix:</p>
+    <textarea id="pixCode" readonly>00020126330014br.gov.bcb.pix0111118339546965204000053039865802BR5924Antonella Barcelos Silva6008Brasilia620905050kkkz63046B96</textarea>
+    <br>
+    <button onclick="copyPixCode()">Copiar Código Pix</button>
+
+    <script>
+        function copyPixCode() {
+            var pixCode = document.getElementById("pixCode");
+            pixCode.select();
+            pixCode.setSelectionRange(0, 99999); // Para dispositivos móveis
+            document.execCommand("copy");
+            alert("Código Pix copiado!");
+        }
+    </script>
+</body>
+</html>
